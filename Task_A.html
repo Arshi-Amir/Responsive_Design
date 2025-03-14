@@ -20,7 +20,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            
             width: 100vw;
             padding: 2vh;
         }
@@ -30,7 +30,7 @@
             max-width: 1237px;
             height: 95vh;
             border-radius: 12px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            /*  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
             display: flex;
             flex-direction: column;
             overflow: auto;
@@ -39,8 +39,7 @@
         /* Header Bar */
         .header {
             background: linear-gradient(to right, #f9e8e3, #f0f3f5);
-            display: flex
-        ;
+            display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1.5vh 2vw;
@@ -68,22 +67,21 @@
         }
 
         .content {
-            display: flex;
-            flex: 1;
-            gap: 0.5vw;
-            margin-top: 1vh;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+           
+            gap: 16px;
+            margin-top: 12px;
+            height: 80vh;
         }
 
+
         .column {
-            background: white;
-            /* White background for Preparing & Ready sections */
-            padding: 4vh;
-            border-radius: 12px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex: 1;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 24px;
+            border-radius: 24px;
+            background: #ffffff;
+            height: 100%;
+            overflow: hidden;
         }
 
         .preparing {
@@ -98,6 +96,7 @@
             font-size: 1.4em;
             font-weight: bold;
             margin-bottom: 2vh;
+            text-align: center;
         }
 
         .grid {
@@ -120,7 +119,7 @@
 
         .box {
             background: #ddd;
-            padding: 1.8vh 2vw;
+            padding: 2.8vh 2vw;
             border-radius: 8px;
             font-size: 1.2em;
             font-weight: bold;
@@ -139,25 +138,100 @@
         .ready .box.large {
             font-size: 1.8em;
             padding: 2.5vh 4vw;
-            width: 100%;
+            width: 96%;
         }
 
         /* Responsive Design */
-        @media (max-width: 1024px) {
-            .content {
-                flex-direction: column;
-                gap: 3vh;
-            }
+       /* Responsive Design */
+@media (max-width: 1024px) {
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+        height: auto;
+    }
 
-            .preparing .grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
+    .preparing .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 
-            .ready .box.large {
-                font-size: 1.5em;
-                padding: 2vh 3vw;
-            }
-        }
+    .ready .box.large {
+        font-size: 1.5em;
+        padding: 2vh 3vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        height: auto;
+    }
+
+    /* Header Fix */
+    .header {
+        
+        height: auto;
+        padding: 2vh;
+        text-align: center;
+    }
+
+    .logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo img {
+        width: 2.5em;
+    }
+
+    .time {
+        font-size: 1.2em;
+        margin-top: 5px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+        height: auto;
+    }
+
+    .preparing .grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1vh;
+    }
+
+    .ready .grid {
+        justify-content: center;
+    }
+
+    .box {
+        padding: 2vh;
+        font-size: 1em;
+    }
+
+    .ready .box.large {
+        font-size: 1.3em;
+        padding: 1.5vh 3vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .preparing .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .box {
+        font-size: 1em;
+        padding: 1.5vh;
+    }
+
+    .ready .box.large {
+        font-size: 1.2em;
+        padding: 1.2vh 2.5vw;
+    }
+}
+
     </style>
 </head>
 
