@@ -184,14 +184,13 @@
 
         @media (max-width: 1024px) {
             .content {
-                display: flex;
-                flex-direction: column;
                 gap: 2vh;
                 height: auto;
+                grid-template-columns: 1fr 1fr;
             }
 
             .preparing .grid {
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(3, 1fr);
             }
 
             .ready .box.large {
@@ -203,6 +202,7 @@
         @media (max-width: 768px) {
             .container {
                 height: auto;
+                
             }
 
             /* Header Fix */
@@ -228,10 +228,9 @@
             }
 
             .content {
-                display: flex;
-                flex-direction: column;
-                gap: 2vh;
                 height: auto;
+                grid-template-columns: 1fr 1fr;
+                gap: 2vh;
             }
 
             .preparing .grid {
